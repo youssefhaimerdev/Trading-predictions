@@ -3,9 +3,8 @@ Allow: /
 Allow: /index.html
 Allow: /privacy.html
 Allow: /sitemap.xml
-Disallow: /api/
 
-Sitemap: https://apex-intelligence.vercel.app/sitemap.xml
+Sitemap: https://trading-predictions.vercel.app/sitemap.xml
 
 # APEX Intelligence — AI Trading Predictions Platform
-# https://apex-intelligence.vercel.app
+# https://trading-predictions.vercel.app
