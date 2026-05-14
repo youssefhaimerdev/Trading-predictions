@@ -1,8 +1,5 @@
 {
   "version": 2,
-  "name": "apex-intelligence",
-  "buildCommand": null,
-  "outputDirectory": ".",
   "cleanUrls": true,
   "trailingSlash": false,
   "headers": [
@@ -13,11 +10,7 @@
         { "key": "X-Content-Type-Options", "value": "nosniff" },
         { "key": "X-XSS-Protection", "value": "1; mode=block" },
         { "key": "Referrer-Policy", "value": "strict-origin-when-cross-origin" },
-        { "key": "Permissions-Policy", "value": "camera=(), microphone=(), geolocation=()" },
-        {
-          "key": "Content-Security-Policy",
-          "value": "default-src 'self'; script-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net https://www.googletagmanager.com https://pagead2.googlesyndication.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; connect-src 'self' https://api.binance.com wss://stream.binance.com:9443 https://api.coingecko.com https://api.alternative.me https://api.frankfurter.app https://api.metals.live https://api.allorigins.win https://query1.finance.yahoo.com https://cryptopanic.com https://feeds.marketwatch.com https://www.coindesk.com https://feeds.a.dj.com; img-src 'self' data: https:; frame-ancestors 'self'; upgrade-insecure-requests;"
-        }
+        { "key": "Permissions-Policy", "value": "camera=(), microphone=(), geolocation=()" }
       ]
     },
     {
@@ -35,27 +28,22 @@
       ]
     },
     {
-      "source": "/(.*)\\.html",
+      "source": "/index.html",
       "headers": [
         { "key": "Cache-Control", "value": "public, s-maxage=300, stale-while-revalidate=600" }
       ]
     },
     {
-      "source": "/(.*)\\.(?:js|css|woff2|woff|ttf)",
+      "source": "/privacy.html",
       "headers": [
-        { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
+        { "key": "Cache-Control", "value": "public, s-maxage=3600, stale-while-revalidate=86400" }
       ]
     }
   ],
   "rewrites": [
-    { "source": "/", "destination": "/index.html" },
     { "source": "/privacy", "destination": "/privacy.html" }
   ],
   "redirects": [
-    {
-      "source": "/home",
-      "destination": "/",
-      "permanent": true
-    }
+    { "source": "/home", "destination": "/", "permanent": true }
   ]
 }
